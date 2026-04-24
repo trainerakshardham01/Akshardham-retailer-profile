@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शर्मा मोबाइल्स एंड इलेक्ट्रॉनिक्स | ललित शर्मा — खानपुर</title>
+<meta name="description" content="शर्मा मोबाइल्स एंड इलेक्ट्रॉनिक्स, खानपुर — मोबाइल, इलेक्ट्रॉनिक्स और अक्षरधाम एसोसिएट्स के अधिकृत सहयोगी।">
+
+<!-- CONFIGURATION: Retailer ID for backlink tracking -->
+<!-- Change this value for each retailer's page -->
+<meta name="retailer-id" content="lalit-sharma">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:opsz,wght@9..40,300..800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --indigo-deep: #141536;
+    --indigo: #1f2159;
+    --indigo-light: #2a2d6e;
+    --amber: #d4a04a;
+    --amber-bright: #e8b863;
+    --amber-deep: #a37529;
+    --cream: #faf5e9;
+    --cream-warm: #f3ead3;
+    --ink: #1a1a24;
+    --ink-soft: #4a4a58;
+    --gold-line: rgba(212, 160, 74, 0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Mukta', 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO - SHOP FIRST ===== */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--indigo-deep) 0%, var(--indigo) 60%, var(--indigo-light) 100%);
+    color: var(--cream);
+    padding: 36px 24px 100px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(212, 160, 74, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 70%, rgba(212, 160, 74, 0.08) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 60px;
+    background: var(--cream);
+    clip-path: polygon(0 100%, 100% 100%, 100% 60%, 50% 0%, 0 60%);
+  }
+
+  .hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-bright);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-brand::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .profile-wrap {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Owner photo - smaller, more humble */
+  .owner-photo-frame {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    position: relative;
+    animation: fadeUp 0.8s ease-out 0.1s both;
+  }
+
+  .owner-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid var(--amber);
+    border-radius: 50%;
+  }
+
+  .owner-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber) 0%, var(--amber-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 300;
+    color: var(--indigo-deep);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+
+  .owner-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .owner-name-small {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(250, 245, 233, 0.75);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s ease-out 0.2s both;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    background: rgba(212, 160, 74, 0.15);
+    border: 1px solid var(--amber);
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--amber-bright);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease-out 0.25s both;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--amber-bright);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  /* SHOP NAME - MAIN FOCUS */
+  .shop-name {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s ease-out 0.3s both;
+  }
+
+  .shop-name-en {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(16px, 2.8vw, 22px);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--amber-bright);
+    margin-bottom: 22px;
+    animation: fadeUp 0.8s ease-out 0.35s both;
+  }
+
+  .shop-address {
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    color: rgba(250, 245, 233, 0.85);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeUp 0.8s ease-out 0.4s both;
+    padding: 12px 20px;
+    background: rgba(212, 160, 74, 0.08);
+    border-top: 1px solid var(--gold-line);
+    border-bottom: 1px solid var(--gold-line);
+    display: inline-block;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section {
+    padding: 80px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .section-title {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    color: var(--indigo-deep);
+    margin-bottom: 20px;
+  }
+
+  .section-title-en {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--amber-deep);
+    font-size: 0.55em;
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* ===== ABOUT - SHOP PHOTO ADDED ===== */
+  .about {
+    background: var(--cream);
+    position: relative;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  /* Shop photo banner */
+  .shop-photo-banner {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, var(--indigo-light), var(--indigo));
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(20, 21, 54, 0.15);
+  }
+
+  .shop-photo-banner::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid var(--amber);
+    pointer-events: none;
+  }
+
+  .shop-photo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shop-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--amber-bright);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .shop-photo-placeholder .icon {
+    font-size: 50px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 28px;
+    background: var(--indigo-deep);
+    color: var(--cream);
+    border-radius: 2px;
+    position: relative;
+    margin-top: 24px;
+  }
+
+  .about-stats::before {
+    content: '';
+    position: absolute;
+    inset: -6px -6px auto auto;
+    width: 40px;
+    height: 40px;
+    border-top: 2px solid var(--amber);
+    border-right: 2px solid var(--amber);
+  }
+
+  .about-stats::after {
+    content: '';
+    position: absolute;
+    inset: auto auto -6px -6px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 2px solid var(--amber);
+    border-left: 2px solid var(--amber);
+  }
+
+  .stat {
+    border-left: 2px solid var(--amber);
+    padding-left: 12px;
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--amber-bright);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(250, 245, 233, 0.75);
+    margin-top: 6px;
+  }
+
+  .services-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  .services-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gold-line);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .services-list li::before {
+    content: '◆';
+    color: var(--amber);
+    font-size: 10px;
+    margin-right: 12px;
+  }
+
+  /* ===== PARTNERS - AKSHARDHAM PROJECTS ===== */
+  .partners {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 90px 24px;
+  }
+
+  .partners-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .partners-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .partners-header .section-label {
+    justify-content: center;
+  }
+
+  .partners-header .section-label::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .partners-note {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 20px auto 0;
+    font-size: 17px;
+  }
+
+  /* Primary Partner: Akshardham Projects showcase */
+  .akshardham-card {
+    background: var(--indigo-deep);
+    color: var(--cream);
+    padding: 44px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .akshardham-card::before {
+    content: 'मुख्य सहयोगी';
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background: var(--amber);
+    color: var(--indigo-deep);
+    padding: 6px 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: rotate(35deg);
+  }
+
+  .akshardham-header {
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+
+  .akshardham-name {
+    font-family: 'Rozha One', serif;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--amber-bright);
+  }
+
+  .akshardham-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(250, 245, 233, 0.8);
+    margin-bottom: 18px;
+  }
+
+  .akshardham-desc {
+    font-size: 15px;
+    color: rgba(250, 245, 233, 0.85);
+    line-height: 1.7;
+  }
+
+  /* Projects grid inside Akshardham card */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .project-btn {
+    background: rgba(212, 160, 74, 0.08);
+    border: 1px solid var(--gold-line);
+    padding: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--cream);
+    display: block;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+  }
+
+  .project-btn:hover {
+    background: rgba(212, 160, 74, 0.18);
+    border-color: var(--amber);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  }
+
+  .project-location {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--amber-bright);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .project-name {
+    font-family: 'Rozha One', serif;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .project-feature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(250, 245, 233, 0.7);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .project-cta {
+    font-size: 12px;
+    color: var(--amber-bright);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .project-cta .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .project-btn:hover .project-cta .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Other partners */
+  .other-partners-title {
+    font-family: 'Rozha One', serif;
+    font-size: 24px;
+    color: var(--indigo-deep);
+    margin: 40px 0 24px;
+    text-align: center;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .partner-card {
+    background: #ffffff;
+    padding: 28px;
+    border: 1px solid var(--gold-line);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+  }
+
+  .partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(20, 21, 54, 0.12);
+    border-color: var(--amber);
+  }
+
+  .partner-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--amber-bright);
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 18px;
+    border-radius: 2px;
+  }
+
+  .partner-card h4 {
+    font-family: 'Rozha One', serif;
+    font-size: 22px;
+    color: var(--indigo-deep);
+    margin-bottom: 8px;
+  }
+
+  .partner-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .partner-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber-deep);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Coming Soon variant */
+  .partner-card.coming-soon {
+    cursor: not-allowed;
+    opacity: 0.65;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .partner-card.coming-soon:hover {
+    transform: none;
+    border-color: var(--gold-line);
+    box-shadow: none;
+  }
+
+  .partner-card.coming-soon::before {
+    content: 'जल्द आ रहा है';
+    position: absolute;
+    top: 14px;
+    right: -38px;
+    background: var(--indigo-deep);
+    color: var(--amber-bright);
+    padding: 4px 44px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transform: rotate(35deg);
+    z-index: 2;
+  }
+
+  .partner-card.coming-soon .partner-link {
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    background: var(--cream);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+  }
+
+  .testimonial {
+    padding: 32px;
+    background: #ffffff;
+    position: relative;
+    border-radius: 2px;
+    border-top: 3px solid var(--amber);
+  }
+
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 80px;
+    color: var(--amber);
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin: 20px 0 24px;
+    padding-top: 8px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gold-line);
+  }
+
+  .author-initial {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-light) 100%);
+    color: var(--amber-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .author-info .name {
+    font-weight: 600;
+    color: var(--indigo-deep);
+    font-size: 15px;
+  }
+
+  .author-info .detail {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    background: var(--indigo-deep);
+    color: var(--cream);
+    max-width: 100%;
+    margin: 0;
+    padding: 90px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(212, 160, 74, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(212, 160, 74, 0.06) 0%, transparent 45%);
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .contact .section-title {
+    color: var(--cream);
+  }
+
+  .contact .section-label {
+    color: var(--amber-bright);
+  }
+
+  .contact-intro {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(250, 245, 233, 0.85);
+    margin-bottom: 36px;
+    max-width: 500px;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 24px;
+    background: rgba(212, 160, 74, 0.08);
+    border: 1px solid var(--gold-line);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--cream);
+    transition: all 0.3s ease;
+  }
+
+  .contact-method:hover {
+    background: rgba(212, 160, 74, 0.15);
+    border-color: var(--amber);
+    transform: translateX(6px);
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--amber);
+    color: var(--indigo-deep);
+    border-radius: 50%;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contact-method .label {
+    font-size: 12px;
+    color: rgba(250, 245, 233, 0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .contact-method .value {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  /* QR Card */
+  .qr-card {
+    background: var(--cream);
+    color: var(--indigo-deep);
+    padding: 40px;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+  }
+
+  .qr-card::before, .qr-card::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--amber);
+  }
+
+  .qr-card::before {
+    top: 10px; left: 10px;
+    border-right: 0; border-bottom: 0;
+  }
+
+  .qr-card::after {
+    bottom: 10px; right: 10px;
+    border-left: 0; border-top: 0;
+  }
+
+  .qr-box {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--indigo-deep),
+      var(--indigo-deep) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      var(--indigo-deep),
+      var(--indigo-deep) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+    background-color: #ffffff;
+    border: 8px solid var(--indigo-deep);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .qr-center {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rozha One', serif;
+    font-size: 22px;
+    color: var(--indigo-deep);
+    border: 2px solid var(--indigo-deep);
+  }
+
+  .qr-text {
+    font-family: 'Rozha One', serif;
+    font-size: 18px;
+    color: var(--indigo-deep);
+    margin-bottom: 8px;
+  }
+
+  .qr-subtext {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #0c0d26;
+    color: rgba(250, 245, 233, 0.6);
+    padding: 30px 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer-brand {
+    font-family: 'Rozha One', serif;
+    color: var(--amber-bright);
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .footer-brand-en {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--amber);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero { padding: 28px 20px 80px; }
+    .hero-brand { margin-bottom: 30px; font-size: 11px; }
+    .owner-photo-frame { width: 90px; height: 90px; }
+    .owner-photo { font-size: 36px; }
+    .shop-address { font-size: 14px; }
+    
+    section { padding: 60px 20px; }
+    
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .about-stats { padding: 22px; gap: 16px; }
+    .stat-num { font-size: 26px; }
+    
+    .partners { padding: 70px 20px; }
+    .akshardham-card { padding: 32px 24px; }
+    .akshardham-name { font-size: 28px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    
+    .contact { padding: 70px 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .qr-card { padding: 30px 24px; }
+    .qr-box { width: 160px; height: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO - SHOP FIRST ===== -->
+<header class="hero">
+  <div class="hero-brand">अक्षरधाम एसोसिएट्स</div>
+  
+  <div class="profile-wrap">
+    <!-- Owner photo (smaller, supporting) -->
+    <div class="owner-photo-frame">
+      <div class="owner-photo">
+        <!-- Replace with: <img src="lalit-photo.jpg" alt="ललित शर्मा"> -->
+        ल
+      </div>
+    </div>
+
+    <div class="owner-name-small">ललित शर्मा · Lalit Sharma</div>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      अधिकृत सहयोगी · Official Associate
+    </div>
+
+    <!-- SHOP NAME - MAIN FOCUS -->
+    <h1 class="shop-name">शर्मा मोबाइल्स एंड<br>इलेक्ट्रॉनिक्स</h1>
+    <div class="shop-name-en">Sharma Mobiles & Electronics</div>
+    
+    <div class="shop-address">
+      📍 मुख्य बाज़ार, खानपुर<br>
+      ज़िला झालावाड़, राजस्थान
+    </div>
+  </div>
+</header>
+
+<!-- ===== ABOUT - SHOP PHOTO ADDED ===== -->
+<section class="about">
+  <div class="section-label">हमारे बारे में · About Our Shop</div>
+  <h2 class="section-title">
+    10 वर्षों से आपकी सेवा में
+    <span class="section-title-en">Serving Khanpur since 2014</span>
+  </h2>
+
+  <div class="about-grid">
+    <!-- LEFT: Shop photo + stats -->
+    <div>
+      <div class="shop-photo-banner">
+        <!-- Replace with: <img src="shop-photo.jpg" alt="शर्मा मोबाइल्स एंड इलेक्ट्रॉनिक्स"> -->
+        <div class="shop-photo-placeholder">
+          <div class="icon">🏪</div>
+          <div>यहां दुकान की फोटो लगाएं<br><em>Shop Photo Goes Here</em></div>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">वर्षों का अनुभव</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">संतुष्ट ग्राहक</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">सहयोगी व्यवसाय</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">ईमानदार सलाह</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Description + services -->
+    <div class="about-text">
+      <p>
+        नमस्ते! मैं <strong>ललित शर्मा</strong> हूं। खानपुर मुख्य बाज़ार में 
+        पिछले 10 वर्षों से मोबाइल, इलेक्ट्रॉनिक्स और छोटी-मोटी घरेलू ज़रूरतों 
+        का सामान रखता हूं। अपने ग्राहकों के साथ ईमानदारी और भरोसे का रिश्ता 
+        मेरी पहचान है।
+      </p>
+      <p>
+        अब मैं <strong>अक्षरधाम एसोसिएट्स</strong> और उनके सहयोगी व्यवसायों 
+        के अधिकृत प्रतिनिधि के तौर पर भी काम करता हूं — ताकि आपको प्रॉपर्टी, 
+        सोलर, होम लोन और निर्माण सामग्री जैसी बड़ी ज़रूरतों के लिए 
+        भी अपने ही इलाके में भरोसेमंद विकल्प मिल सके।
+      </p>
+
+      <ul class="services-list">
+        <li>मोबाइल बिक्री और रिचार्ज</li>
+        <li>इलेक्ट्रॉनिक एक्सेसरीज़</li>
+        <li>अक्षरधाम प्लॉट — परामर्श सेवा</li>
+        <li>सोलर, लोन, सामग्री — सहयोगी सेवाएं</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS - AKSHARDHAM PROJECTS ===== -->
+<section class="partners">
+  <div class="partners-inner">
+    <div class="partners-header">
+      <div class="section-label">सहयोगी व्यवसाय · Partner Network</div>
+      <h2 class="section-title">
+        हमारे भरोसेमंद साथी
+        <span class="section-title-en">Heavy Discounts · Direct Access</span>
+      </h2>
+      <p class="partners-note">
+        मेरे माध्यम से आप इन सभी व्यवसायों से सीधा संपर्क कर सकते हैं — 
+        विशेष छूट और भरोसेमंद सेवा की गारंटी के साथ।
+      </p>
+    </div>
+
+    <!-- Akshardham Associates - Primary Partner -->
+    <div class="akshardham-card">
+      <div class="akshardham-header">
+        <div class="akshardham-name">अक्षरधाम एसोसिएट्स</div>
+        <div class="akshardham-tagline">Real Estate · Plot Development since 2004</div>
+        <p class="akshardham-desc">
+          झालावाड़ और कोटा क्षेत्र में 20+ वर्षों से भरोसेमंद प्लॉट विकास। 
+          कानूनी रूप से स्पष्ट, पूर्ण सुविधायुक्त, और निवेश योग्य प्रॉपर्टी।
+          नीचे किसी भी परियोजना पर क्लिक करके पूरी जानकारी प्राप्त करें।
+        </p>
+      </div>
+
+      <!-- Projects grid - each links to central projects page with backlink tracking -->
+      <div class="projects-grid">
+        <a href="projects.html?source=lalit-sharma&colony=vinayak" class="project-btn">
+          <div class="project-location">झालावाड़</div>
+          <div class="project-name">विनायक रेजीडेंसी</div>
+          <div class="project-feature">खेल संकुल, बस स्टैण्ड, फल मण्डी के नजदीक</div>
+          <div class="project-cta">नक्शा और जानकारी <span class="arrow">→</span></div>
+        </a>
+
+        <a href="projects.html?source=lalit-sharma&colony=gopal" class="project-btn">
+          <div class="project-location">खानपुर</div>
+          <div class="project-name">गोपाल विहार</div>
+          <div class="project-feature">मेगा हाईवे पर, व्यावसायिक + आवासीय प्लॉट</div>
+          <div class="project-cta">नक्शा और जानकारी <span class="arrow">→</span></div>
+        </a>
+
+        <a href="projects.html?source=lalit-sharma&colony=dwarika" class="project-btn">
+          <div class="project-location">खानपुर</div>
+          <div class="project-name">न्यू द्वारिका नगर</div>
+          <div class="project-feature">प्राइम लोकेशन, 30' रोड, आवासीय कॉलोनी</div>
+          <div class="project-cta">नक्शा और जानकारी <span class="arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+
+    <h3 class="other-partners-title">अन्य सहयोगी सेवाएं</h3>
+
+    <div class="partners-grid">
+      <a href="partner-solar.html?source=lalit-sharma" class="partner-card">
+        <div class="partner-icon">☀</div>
+        <h4>दुबे इलेक्ट्रिकल्स & सोलर</h4>
+        <p>सब्सिडी वाला सोलर सिस्टम — ₹95,000 तक की सरकारी छूट।</p>
+        <span class="partner-link">जानकारी लें →</span>
+      </a>
+
+      <div class="partner-card coming-soon">
+        <div class="partner-icon">₹</div>
+        <h4>होम लोन परामर्श</h4>
+        <p>बैंकों से सीधा संपर्क — न्यूनतम कागज़ात, तेज़ स्वीकृति।</p>
+        <span class="partner-link">जल्द उपलब्ध</span>
+      </div>
+
+      <div class="partner-card coming-soon">
+        <div class="partner-icon">◈</div>
+        <h4>निर्माण सामग्री</h4>
+        <p>सीमेंट, सरिया, ईंट — थोक भाव में, घर पहुंच सुविधा।</p>
+        <span class="partner-link">जल्द उपलब्ध</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="section-label">ग्राहकों की राय · Testimonials</div>
+  <h2 class="section-title">
+    जो मुझ पर भरोसा करते हैं
+    <span class="section-title-en">What my customers say</span>
+  </h2>
+
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">
+        ललित भाई ने विनायक रेजीडेंसी का प्लॉट दिखाया। पूरी जानकारी दी, 
+        कहीं धोखा नहीं। अब मेरे बेटे का घर वहीं बन रहा है।
+      </p>
+      <div class="testimonial-author">
+        <div class="author-initial">र</div>
+        <div class="author-info">
+          <div class="name">रमेश जी</div>
+          <div class="detail">खानपुर · प्लॉट खरीदार</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-text">
+        सोलर लगवाना था। ललित भाई के माध्यम से सूर्य सोलर से संपर्क हुआ 
+        और सब्सिडी सहित अच्छे भाव पर काम हो गया।
+      </p>
+      <div class="testimonial-author">
+        <div class="author-initial">स</div>
+        <div class="author-info">
+          <div class="name">सुनील जी</div>
+          <div class="detail">खानपुर · सोलर ग्राहक</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-text">
+        भरोसेमंद आदमी। जो कहते हैं वही करते हैं। अपने इलाके में 
+        ऐसा सहयोगी मिलना सौभाग्य की बात है।
+      </p>
+      <div class="testimonial-author">
+        <div class="author-initial">म</div>
+        <div class="author-info">
+          <div class="name">महेश जी</div>
+          <div class="detail">झालावाड़ · रेगुलर ग्राहक</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">संपर्क करें · Get in Touch</div>
+        <h2 class="section-title">
+          बात कीजिए<br>
+          आपकी सेवा में हाज़िर
+        </h2>
+        <p class="contact-intro">
+          "कोई भी सवाल, कोई भी ज़रूरत — बेझिझक कॉल कीजिए। 
+          सही सलाह देना मेरा फ़र्ज़ है।"
+        </p>
+
+        <div class="contact-methods">
+          <a href="tel:+919999999999" class="contact-method">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="label">कॉल करें</div>
+              <div class="value">+91 99999 99999</div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/919999999999" class="contact-method">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="label">WhatsApp</div>
+              <div class="value">+91 99999 99999</div>
+            </div>
+          </a>
+
+          <a href="#" class="contact-method">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="label">दुकान का पता</div>
+              <div class="value">मुख्य बाज़ार, खानपुर, झालावाड़</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="qr-card">
+        <div class="qr-box">
+          <div class="qr-center">अ</div>
+        </div>
+        <div class="qr-text">इस पेज को स्कैन कीजिए</div>
+        <div class="qr-subtext">Scan to save profile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-brand">अक्षरधाम एसोसिएट्स</div>
+  <div class="footer-brand-en">AKSHARDHAM ASSOCIATES · EST. 2004</div>
+  <div style="margin-top: 14px;">
+    झालावाड़ · कोटा · राजस्थान &nbsp;|&nbsp; © 2026
+  </div>
+</footer>
+
+</body>
+</html>

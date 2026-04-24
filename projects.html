@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अक्षरधाम परियोजनाएं | प्लॉट जानकारी — झालावाड़ और खानपुर</title>
+<meta name="description" content="अक्षरधाम एसोसिएट्स की परियोजनाएं — विनायक रेजीडेंसी, गोपाल विहार, न्यू द्वारिका नगर। पूर्ण जानकारी, नक्शा और सीधा संपर्क।">
+
+<!-- ⚠️ CONFIGURE THIS: Replace with your deployed Google Apps Script web app URL -->
+<meta name="form-endpoint" content="https://script.google.com/macros/s/YOUR_DEPLOYED_WEB_APP_URL/exec">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:opsz,wght@9..40,300..800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --indigo-deep: #141536;
+    --indigo: #1f2159;
+    --indigo-light: #2a2d6e;
+    --amber: #d4a04a;
+    --amber-bright: #e8b863;
+    --amber-deep: #a37529;
+    --cream: #faf5e9;
+    --cream-warm: #f3ead3;
+    --ink: #1a1a24;
+    --ink-soft: #4a4a58;
+    --gold-line: rgba(212, 160, 74, 0.35);
+    --success: #2d7a4b;
+    --success-bg: #e8f5ed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Mukta', 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== TOP BANNER (REFERRAL CREDIT) ===== */
+  .referral-banner {
+    background: var(--amber);
+    color: var(--indigo-deep);
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+  }
+
+  .referral-banner.show {
+    display: block;
+    animation: slideDown 0.5s ease-out;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .referral-banner strong {
+    font-weight: 700;
+  }
+
+  /* ===== HEADER ===== */
+  .main-header {
+    background: var(--indigo-deep);
+    color: var(--cream);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .main-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(212, 160, 74, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 70%, rgba(212, 160, 74, 0.08) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-bright);
+  }
+
+  .logo-row::before, .logo-row::after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .header-title {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .header-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(250, 245, 233, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ===== PROJECT TABS (DESKTOP) / ACCORDION (MOBILE) ===== */
+  .projects-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .projects-intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .intro-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 14px;
+  }
+
+  .intro-label::before, .intro-label::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .intro-title {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--indigo-deep);
+    line-height: 1.1;
+  }
+
+  /* Tabs bar (desktop) */
+  .tabs-nav {
+    display: flex;
+    background: #ffffff;
+    border-radius: 2px;
+    border: 1px solid var(--gold-line);
+    overflow: hidden;
+    margin-bottom: 0;
+    box-shadow: 0 10px 30px rgba(20, 21, 54, 0.06);
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 20px 24px;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+    color: var(--ink-soft);
+    transition: all 0.3s ease;
+    border-right: 1px solid var(--gold-line);
+    text-align: center;
+  }
+
+  .tab-button:last-child { border-right: none; }
+
+  .tab-button:hover {
+    background: var(--cream-warm);
+  }
+
+  .tab-button.active {
+    background: var(--indigo-deep);
+    color: var(--cream);
+  }
+
+  .tab-location {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .tab-button.active .tab-location {
+    color: var(--amber-bright);
+  }
+
+  .tab-name {
+    font-family: 'Rozha One', serif;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  /* Project Content Panels */
+  .tab-panels {
+    background: #ffffff;
+    border: 1px solid var(--gold-line);
+    border-top: none;
+    padding: 40px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 10px 30px rgba(20, 21, 54, 0.06);
+  }
+
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Project content layout */
+  .project-header {
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gold-line);
+  }
+
+  .project-location-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: var(--indigo-deep);
+    color: var(--amber-bright);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    border-radius: 2px;
+  }
+
+  .project-title {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(30px, 4.5vw, 44px);
+    color: var(--indigo-deep);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .project-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+
+  .project-body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* Map image */
+  .project-map {
+    width: 100%;
+    border: 1px solid var(--gold-line);
+    border-radius: 2px;
+    overflow: hidden;
+    background: #f0f0f0;
+    aspect-ratio: 3/4;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .project-map:hover {
+    box-shadow: 0 15px 40px rgba(20, 21, 54, 0.15);
+  }
+
+  .project-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+  }
+
+  .project-map::after {
+    content: '🔍 बड़ा करके देखें';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(20, 21, 54, 0.85);
+    color: var(--cream);
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-map:hover::after {
+    opacity: 1;
+  }
+
+  /* Project details */
+  .project-details h3 {
+    font-family: 'Rozha One', serif;
+    font-size: 22px;
+    color: var(--indigo-deep);
+    margin-bottom: 16px;
+  }
+
+  .features-list {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .features-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--gold-line);
+    font-size: 15px;
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .features-list li::before {
+    content: '✦';
+    color: var(--amber);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 14px;
+    padding: 20px;
+    background: var(--cream-warm);
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  .meta-item {
+    text-align: center;
+  }
+
+  .meta-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--indigo-deep);
+    line-height: 1.1;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Download PDF button */
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--indigo-deep);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--indigo-deep);
+  }
+
+  .download-btn:hover {
+    background: var(--amber);
+    color: var(--indigo-deep);
+    border-color: var(--amber);
+  }
+
+  /* ===== INLINE CONTACT FORM ===== */
+  .inquiry-form-wrap {
+    background: linear-gradient(135deg, var(--indigo-deep), var(--indigo));
+    color: var(--cream);
+    padding: 36px;
+    border-radius: 2px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inquiry-form-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 80% 20%, rgba(212, 160, 74, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .form-label-top {
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--amber-bright);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .form-title {
+    font-family: 'Rozha One', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .form-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: rgba(250, 245, 233, 0.8);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .inquiry-form {
+    display: grid;
+    gap: 14px;
+    position: relative;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amber-bright);
+    font-weight: 500;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 12px 16px;
+    background: rgba(250, 245, 233, 0.08);
+    border: 1px solid var(--gold-line);
+    border-radius: 2px;
+    color: var(--cream);
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    transition: all 0.2s ease;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--amber);
+    background: rgba(250, 245, 233, 0.12);
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: rgba(250, 245, 233, 0.4);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  .submit-btn {
+    padding: 16px 32px;
+    background: var(--amber);
+    color: var(--indigo-deep);
+    border: none;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .submit-btn:hover {
+    background: var(--amber-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 160, 74, 0.4);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  .form-note {
+    font-size: 13px;
+    color: rgba(250, 245, 233, 0.6);
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Success message */
+  .form-success {
+    padding: 30px;
+    background: var(--success-bg);
+    border: 2px solid var(--success);
+    border-radius: 2px;
+    text-align: center;
+    color: var(--indigo-deep);
+    display: none;
+  }
+
+  .form-success.show {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .form-success .check {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background: var(--success);
+    color: #ffffff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .form-success h3 {
+    font-family: 'Rozha One', serif;
+    font-size: 24px;
+    color: var(--success);
+    margin-bottom: 8px;
+  }
+
+  .form-success p {
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  /* ===== BOTTOM CTA ===== */
+  .bottom-cta {
+    background: var(--indigo-deep);
+    color: var(--cream);
+    padding: 60px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bottom-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(212, 160, 74, 0.08) 0%, transparent 60%);
+  }
+
+  .bottom-cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bottom-cta h2 {
+    font-family: 'Rozha One', serif;
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 12px;
+    color: var(--amber-bright);
+  }
+
+  .bottom-cta p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: rgba(250, 245, 233, 0.85);
+    margin-bottom: 24px;
+    font-size: 17px;
+  }
+
+  .call-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    background: var(--amber);
+    color: var(--indigo-deep);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    font-size: 15px;
+  }
+
+  .call-btn.wa {
+    background: #25D366;
+    color: #ffffff;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #0c0d26;
+    color: rgba(250, 245, 233, 0.6);
+    padding: 30px 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer-brand {
+    font-family: 'Rozha One', serif;
+    color: var(--amber-bright);
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  /* ===== RESPONSIVE (MOBILE = ACCORDION) ===== */
+  @media (max-width: 768px) {
+    .main-header { padding: 20px; }
+    
+    .projects-section { padding: 40px 16px; }
+    
+    /* Convert tabs to accordion on mobile */
+    .tabs-nav {
+      display: none;
+    }
+    
+    .tab-panels {
+      border: none;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    .tab-panel {
+      display: block !important; /* Show all on mobile, use accordion */
+      background: #ffffff;
+      border: 1px solid var(--gold-line);
+      border-radius: 2px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    
+    .tab-panel .project-header {
+      margin-bottom: 0;
+      padding: 20px;
+      background: var(--cream-warm);
+      cursor: pointer;
+      border-bottom: 1px solid var(--gold-line);
+      position: relative;
+    }
+    
+    .tab-panel .project-header::after {
+      content: '▼';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.3s ease;
+      color: var(--amber-deep);
+    }
+    
+    .tab-panel.expanded .project-header::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    
+    .tab-panel .project-title {
+      font-size: 26px;
+    }
+    
+    .tab-panel-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    
+    .tab-panel.expanded .tab-panel-body {
+      max-height: 5000px;
+    }
+    
+    .tab-panel-body-inner {
+      padding: 24px 20px;
+    }
+    
+    .project-body {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .inquiry-form-wrap {
+      padding: 24px 20px;
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Desktop - show only active panel */
+  @media (min-width: 769px) {
+    .tab-panel .tab-panel-body {
+      display: block;
+    }
+    .tab-panel .project-header {
+      cursor: default;
+    }
+    .tab-panel .project-header::after {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== REFERRAL BANNER (shows if came via retailer) ===== -->
+<div class="referral-banner" id="referralBanner">
+  आप <strong id="referrerName">...</strong> के माध्यम से पधारे हैं — आपका स्वागत है!
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-row">अक्षरधाम एसोसिएट्स · since 2004</div>
+    <h1 class="header-title">हमारी परियोजनाएं</h1>
+    <p class="header-subtitle">झालावाड़ और खानपुर में भरोसेमंद आवासीय कॉलोनियां — कानूनी, सुविधायुक्त, निवेश योग्य</p>
+  </div>
+</header>
+
+<!-- ===== PROJECTS SECTION ===== -->
+<section class="projects-section">
+  <div class="projects-intro">
+    <div class="intro-label">तीन परियोजनाएं · Three Projects</div>
+    <h2 class="intro-title">कौन सी कॉलोनी आपके लिए सही है?</h2>
+  </div>
+
+  <!-- TABS NAV (desktop) -->
+  <nav class="tabs-nav" role="tablist">
+    <button class="tab-button active" data-tab="vinayak" role="tab">
+      <span class="tab-location">झालावाड़</span>
+      <span class="tab-name">विनायक रेजीडेंसी</span>
+    </button>
+    <button class="tab-button" data-tab="gopal" role="tab">
+      <span class="tab-location">खानपुर</span>
+      <span class="tab-name">गोपाल विहार</span>
+    </button>
+    <button class="tab-button" data-tab="dwarika" role="tab">
+      <span class="tab-location">खानपुर</span>
+      <span class="tab-name">न्यू द्वारिका नगर</span>
+    </button>
+  </nav>
+
+  <!-- TAB PANELS -->
+  <div class="tab-panels">
+
+    <!-- ============ VINAYAK RESIDENCY ============ -->
+    <div class="tab-panel active" id="panel-vinayak">
+      <div class="project-header">
+        <span class="project-location-tag">झालावाड़ · Jhalawar</span>
+        <h2 class="project-title">विनायक रेजीडेंसी</h2>
+        <p class="project-subtitle">
+          झालावाड़ शहर की सबसे प्राइम लोकेशन — खेल संकुल, बस स्टैण्ड, फल मण्डी के नजदीक आवासीय कॉलोनी
+        </p>
+      </div>
+
+      <div class="tab-panel-body">
+        <div class="tab-panel-body-inner">
+          <div class="project-body">
+            <!-- LEFT: Map -->
+            <a href="Vinayak_Residency.pdf" target="_blank" class="project-map">
+              <img src="vinayak-map.jpg" alt="विनायक रेजीडेंसी का नक्शा">
+            </a>
+
+            <!-- RIGHT: Details -->
+            <div class="project-details">
+              <h3>विशेषताएं</h3>
+              <ul class="features-list">
+                <li>आबादी के मध्य स्थित कॉलोनी</li>
+                <li>झालावाड़ शहर के पॉश एरिया के मध्य</li>
+                <li>बस स्टैण्ड, खेल संकुल, फल मण्डी आदि प्रमुख सुविधाएं नजदीक में</li>
+                <li>30 फीट चौड़ा सी.सी. पहुँच मार्ग</li>
+                <li>रजिस्ट्रीशुदा जनरल प्लॉट्स</li>
+                <li>40 एवं 30 फीट चौड़ी सड़कें</li>
+                <li>तुरन्त भवन निर्माण के लिए उपलब्ध</li>
+                <li>सभी साईजों में प्लॉट उपलब्ध (25X40, 25X50)</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="meta-item">
+                  <div class="meta-num">25×40</div>
+                  <div class="meta-label">से शुरू</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">40'</div>
+                  <div class="meta-label">रोड चौड़ाई</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">✓</div>
+                  <div class="meta-label">रजिस्ट्रीशुदा</div>
+                </div>
+              </div>
+
+              <a href="Vinayak_Residency.pdf" download class="download-btn">
+                📥 नक्शा डाउनलोड करें (PDF)
+              </a>
+            </div>
+          </div>
+
+          <!-- INQUIRY FORM -->
+          <div class="inquiry-form-wrap">
+            <div class="form-label-top">पूछताछ फॉर्म · Inquiry</div>
+            <h3 class="form-title">विनायक रेजीडेंसी के बारे में जानें</h3>
+            <p class="form-subtitle">अपनी जानकारी भरें, हम आपसे स्वयं संपर्क करेंगे</p>
+
+            <form class="inquiry-form" data-colony="विनायक रेजीडेंसी" data-colony-en="Vinayak Residency">
+              <div class="form-row">
+                <div class="form-field">
+                  <label>पूरा नाम *</label>
+                  <input type="text" name="name" required placeholder="आपका नाम">
+                </div>
+                <div class="form-field">
+                  <label>मोबाइल नंबर *</label>
+                  <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="10 अंकों का नंबर">
+                </div>
+              </div>
+              <div class="form-field">
+                <label>आपकी आवश्यकता (वैकल्पिक)</label>
+                <textarea name="message" placeholder="कितने फीट का प्लॉट चाहिए, बजट, कब लेना है, आदि"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                जानकारी भेजें <span>→</span>
+              </button>
+              <p class="form-note">आपकी जानकारी सुरक्षित है — केवल अक्षरधाम टीम से संपर्क के लिए उपयोग होगी।</p>
+            </form>
+
+            <div class="form-success">
+              <div class="check">✓</div>
+              <h3>धन्यवाद!</h3>
+              <p>आपकी जानकारी प्राप्त हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ GOPAL VIHAR ============ -->
+    <div class="tab-panel" id="panel-gopal">
+      <div class="project-header">
+        <span class="project-location-tag">खानपुर · Khanpur</span>
+        <h2 class="project-title">गोपाल विहार</h2>
+        <p class="project-subtitle">
+          रूपा हेड़ा रोड, मेगा हाईवे खानपुर — बुन्दू पठान कॉलेज के सामने, बस स्टैण्ड नजदीक
+        </p>
+      </div>
+
+      <div class="tab-panel-body">
+        <div class="tab-panel-body-inner">
+          <div class="project-body">
+            <a href="Gopal_VIhaar.pdf" target="_blank" class="project-map">
+              <img src="gopal-map.jpg" alt="गोपाल विहार का नक्शा">
+            </a>
+
+            <div class="project-details">
+              <h3>विशेषताएं</h3>
+              <ul class="features-list">
+                <li>आवासीय कीमत पर व्यवसायिक प्लॉट</li>
+                <li>फ्रन्ट में 82 फीट खाली जगह</li>
+                <li>मेगा हाईवे एवं खानपुर कस्बे से लगा हुआ</li>
+                <li>अत्याधुनिक सुविधाओं सहित</li>
+                <li>निर्माणाधीन बस स्टैण्ड के नजदीक</li>
+                <li>कनवर्टेड प्लॉट</li>
+                <li>पक्की सड़कें (30 फीट चौड़ी)</li>
+                <li>रूपा हेड़ा रोड पर पॉश एरिया</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="meta-item">
+                  <div class="meta-num">82'</div>
+                  <div class="meta-label">फ्रन्ट खाली जगह</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">30'</div>
+                  <div class="meta-label">रोड चौड़ाई</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">✓</div>
+                  <div class="meta-label">कनवर्टेड</div>
+                </div>
+              </div>
+
+              <a href="Gopal_VIhaar.pdf" download class="download-btn">
+                📥 नक्शा डाउनलोड करें (PDF)
+              </a>
+            </div>
+          </div>
+
+          <div class="inquiry-form-wrap">
+            <div class="form-label-top">पूछताछ फॉर्म · Inquiry</div>
+            <h3 class="form-title">गोपाल विहार के बारे में जानें</h3>
+            <p class="form-subtitle">अपनी जानकारी भरें, हम आपसे स्वयं संपर्क करेंगे</p>
+
+            <form class="inquiry-form" data-colony="गोपाल विहार" data-colony-en="Gopal Vihar">
+              <div class="form-row">
+                <div class="form-field">
+                  <label>पूरा नाम *</label>
+                  <input type="text" name="name" required placeholder="आपका नाम">
+                </div>
+                <div class="form-field">
+                  <label>मोबाइल नंबर *</label>
+                  <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="10 अंकों का नंबर">
+                </div>
+              </div>
+              <div class="form-field">
+                <label>आपकी आवश्यकता (वैकल्पिक)</label>
+                <textarea name="message" placeholder="कितने फीट का प्लॉट चाहिए, आवासीय या व्यवसायिक, बजट, आदि"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                जानकारी भेजें <span>→</span>
+              </button>
+              <p class="form-note">आपकी जानकारी सुरक्षित है — केवल अक्षरधाम टीम से संपर्क के लिए उपयोग होगी।</p>
+            </form>
+
+            <div class="form-success">
+              <div class="check">✓</div>
+              <h3>धन्यवाद!</h3>
+              <p>आपकी जानकारी प्राप्त हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ DWARIKA NAGAR ============ -->
+    <div class="tab-panel" id="panel-dwarika">
+      <div class="project-header">
+        <span class="project-location-tag">खानपुर · Khanpur</span>
+        <h2 class="project-title">न्यू द्वारिका नगर</h2>
+        <p class="project-subtitle">
+          खानपुर की सबसे प्राइम लोकेशन — भवानी शंकर जी के मकान के पीछे आवासीय कॉलोनी
+        </p>
+      </div>
+
+      <div class="tab-panel-body">
+        <div class="tab-panel-body-inner">
+          <div class="project-body">
+            <a href="Dwarika_Nagar.pdf" target="_blank" class="project-map">
+              <img src="dwarika-map.jpg" alt="द्वारिका नगर का नक्शा">
+            </a>
+
+            <div class="project-details">
+              <h3>विशेषताएं</h3>
+              <ul class="features-list">
+                <li>खानपुर की सबसे प्राइम लोकेशन</li>
+                <li>भवानी शंकर जी के मकान के पीछे स्थित</li>
+                <li>पूर्ण आवासीय कॉलोनी</li>
+                <li>30 फीट चौड़ी पक्की सड़कें</li>
+                <li>कुल भूमि क्षेत्र: 44,207 वर्ग फीट</li>
+                <li>प्लॉट क्षेत्र: 32,749 वर्ग फीट</li>
+                <li>विविध साइज़ — 813 से 2105 वर्ग फीट तक</li>
+                <li>सभी दिशाओं में मुख्य मार्गों से जुड़ाव</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="meta-item">
+                  <div class="meta-num">44,207</div>
+                  <div class="meta-label">कुल वर्ग फीट</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">30'</div>
+                  <div class="meta-label">रोड चौड़ाई</div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-num">25+</div>
+                  <div class="meta-label">प्लॉट्स</div>
+                </div>
+              </div>
+
+              <a href="Dwarika_Nagar.pdf" download class="download-btn">
+                📥 नक्शा डाउनलोड करें (PDF)
+              </a>
+            </div>
+          </div>
+
+          <div class="inquiry-form-wrap">
+            <div class="form-label-top">पूछताछ फॉर्म · Inquiry</div>
+            <h3 class="form-title">न्यू द्वारिका नगर के बारे में जानें</h3>
+            <p class="form-subtitle">अपनी जानकारी भरें, हम आपसे स्वयं संपर्क करेंगे</p>
+
+            <form class="inquiry-form" data-colony="न्यू द्वारिका नगर" data-colony-en="New Dwarika Nagar">
+              <div class="form-row">
+                <div class="form-field">
+                  <label>पूरा नाम *</label>
+                  <input type="text" name="name" required placeholder="आपका नाम">
+                </div>
+                <div class="form-field">
+                  <label>मोबाइल नंबर *</label>
+                  <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="10 अंकों का नंबर">
+                </div>
+              </div>
+              <div class="form-field">
+                <label>आपकी आवश्यकता (वैकल्पिक)</label>
+                <textarea name="message" placeholder="कितने फीट का प्लॉट चाहिए, बजट, कब लेना है, आदि"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                जानकारी भेजें <span>→</span>
+              </button>
+              <p class="form-note">आपकी जानकारी सुरक्षित है — केवल अक्षरधाम टीम से संपर्क के लिए उपयोग होगी।</p>
+            </form>
+
+            <div class="form-success">
+              <div class="check">✓</div>
+              <h3>धन्यवाद!</h3>
+              <p>आपकी जानकारी प्राप्त हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BOTTOM CTA ===== -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>अभी बात करना चाहते हैं?</h2>
+    <p>"सही प्लॉट, सही भाव, सही सलाह — 20 साल का भरोसा"</p>
+    <div class="call-buttons">
+      <a href="tel:+918690134008" class="call-btn">📞 कॉल करें</a>
+      <a href="https://wa.me/918690134008" class="call-btn wa">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-brand">अक्षरधाम एसोसिएट्स</div>
+  <div>ऑफिस: मिलन हेयर ड्रेसर के सामने, मंगलपुरा, झालावाड़</div>
+  <div style="margin-top: 8px;">संपर्क: 8690134008 · 9571803944 · 9784672143</div>
+  <div style="margin-top: 14px;">© 2026 · झालावाड़ · कोटा · राजस्थान</div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // ============================================
+  // RETAILER DIRECTORY - Map source IDs to names
+  // Add new retailers here as they onboard
+  // ============================================
+  const RETAILERS = {
+    'lalit-sharma': 'ललित शर्मा (शर्मा मोबाइल्स, खानपुर)',
+    'mukesh-agarwal': 'मुकेश अग्रवाल (अग्रवाल हार्डवेयर, झालावाड़)',
+    'direct': 'सीधा संपर्क'
+  };
+
+  // ============================================
+  // URL PARAMS - Extract source & colony
+  // ============================================
+  function getURLParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  const source = getURLParam('source') || 'direct';
+  const targetColony = getURLParam('colony'); // vinayak, gopal, dwarika
+
+  // ============================================
+  // SHOW REFERRAL BANNER (if came via retailer)
+  // ============================================
+  if (source && source !== 'direct' && RETAILERS[source]) {
+    const banner = document.getElementById('referralBanner');
+    const refName = document.getElementById('referrerName');
+    refName.textContent = RETAILERS[source];
+    banner.classList.add('show');
+  }
+
+  // ============================================
+  // TAB SWITCHING (desktop) & ACCORDION (mobile)
+  // ============================================
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  function switchTab(tabId) {
+    tabButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tabId);
+    });
+    tabPanels.forEach(panel => {
+      panel.classList.toggle('active', panel.id === 'panel-' + tabId);
+    });
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+
+  // Mobile: Accordion functionality
+  const isMobile = () => window.innerWidth <= 768;
+  
+  document.querySelectorAll('.tab-panel .project-header').forEach(header => {
+    header.addEventListener('click', () => {
+      if (isMobile()) {
+        const panel = header.closest('.tab-panel');
+        panel.classList.toggle('expanded');
+      }
+    });
+  });
+
+  // ============================================
+  // AUTO-OPEN TARGET COLONY (from URL)
+  // ============================================
+  if (targetColony && ['vinayak', 'gopal', 'dwarika'].includes(targetColony)) {
+    switchTab(targetColony);
+    // On mobile, expand that accordion
+    if (isMobile()) {
+      const panel = document.getElementById('panel-' + targetColony);
+      if (panel) {
+        panel.classList.add('expanded');
+        // Scroll to it
+        setTimeout(() => {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  } else if (isMobile()) {
+    // On mobile, expand the first one by default
+    document.querySelector('.tab-panel.active').classList.add('expanded');
+  }
+
+  // ============================================
+  // FORM SUBMISSIONS WITH BACKLINK TRACKING
+  // ============================================
+  const FORM_ENDPOINT = document.querySelector('meta[name="form-endpoint"]').content;
+
+  document.querySelectorAll('.inquiry-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('.submit-btn');
+      const successBox = form.parentElement.querySelector('.form-success');
+      
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+      const colony = form.dataset.colony;
+      const colonyEn = form.dataset.colonyEn;
+      
+      // Validate phone
+      if (!/^[0-9]{10}$/.test(phone)) {
+        alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें।');
+        return;
+      }
+
+      // Prepare data with backlink tracking
+      const data = {
+        timestamp: new Date().toISOString(),
+        name: name,
+        phone: phone,
+        message: message,
+        colony: colony,
+        colony_en: colonyEn,
+        source: source,              // <-- BACKLINK TRACKING
+        source_name: RETAILERS[source] || source,
+        page_url: window.location.href,
+        user_agent: navigator.userAgent
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'भेज रहे हैं... <span>⏳</span>';
+
+      try {
+        // Send to Google Apps Script
+        // Using no-cors mode since Apps Script doesn't return CORS headers
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        // Show success
+        form.style.display = 'none';
+        successBox.classList.add('show');
+        
+        // Reset button for future (though form is hidden)
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'जानकारी भेजें <span>→</span>';
+        
+      } catch (err) {
+        alert('कुछ गलती हुई। कृपया सीधा कॉल करें: 8690134008');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'जानकारी भेजें <span>→</span>';
+        console.error('Form submission error:', err);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
